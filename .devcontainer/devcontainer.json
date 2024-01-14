@@ -1,7 +1,6 @@
 // See https://containers.dev/implementors/json_reference/ for configuration reference
 {
-"name": "basic configu",
-"remoteUser": "devcontainer",
+"name": "basic configure",
 "customizations": {
 	"vscode": {
 		"extensions": [
