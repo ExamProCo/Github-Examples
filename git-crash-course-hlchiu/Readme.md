@@ -39,8 +39,33 @@ cd /workspaces/tmp
 
 ```sh
 git clone https://github.com/hlchiu/Github-Examples.git
+cd GitHub-Examples
 ```
 
+### SSH
+
+```ssh
+git clone git@github.com:hlchiu/Github-Examples.git
+cd GitHub-Examples
+```
+
+We will need to create our own SSH rsa key pair
+
+```sh
+sshe-keygen -t rsa
+```
+
+For WSL users and if you crete a non default key you might need to add it
+
+```sh
+eval `ssh-agent`
+ssh-add /home/bchiu/.ssh/alt-github_id_rsa
+```
+
+We can test our connection here:
+```
+ssh -T git@github.com
+```
 
 ## Commits
 When we want to commit code we can write git commit which will open up the commit edit message(COMMIT_EDITMSG) in the editor of choice.
