@@ -67,6 +67,35 @@ We can test our connection here:
 ssh -T git@github.com
 ```
 
+### Git CLI
+
+Install CLI
+
+e.g. Linux or Ubutun
+```
+type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt update \
+&& sudo apt install gh -y
+```
+https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+
+
+```
+gh auth login 
+gh repo clone hlchiu/Github-Examples
+
+```
+
+For WSL users and if you crete a non default key you might need to add it
+
+```sh
+eval `ssh-agent`
+ssh-add /home/bchiu/.ssh/github-ssh_id_rsa
+```
+
 ## Commits
 When we want to commit code we can write git commit which will open up the commit edit message(COMMIT_EDITMSG) in the editor of choice.
 
