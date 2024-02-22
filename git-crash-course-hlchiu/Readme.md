@@ -119,11 +119,48 @@ git commit -m "change ~~ to !!"
 
 ## Branches
 
-## Remotes
+List of braches
 
+```sh
+git branch
+```
+
+Create a new branch
+
+```sh
+git branch branch-name
+```
+Checkout the branch
+
+```
+git checkout dev(branch-name)
+
+```
+
+## Remotes
+We can add remote but often you will jsut add remote via upstream when you adding a branch
+
+```sh
+git remote add ....
+git branch -u origin new-feature
+```
 ## Stashing
 
+```
+git stash
+git stash list
+git stash pop
+
+git stash save readmechange
+git stash apply
+```
+
 ## Merging
+
+```sh
+git checkout dev
+git merge main
+```
 
 ## Add
 When we want to stage changes that will be included in the commit 
@@ -181,4 +218,16 @@ When we want to push a repo to our remote origin
 
 ```sh
 git push
+```
+
+When you create a local branch(no new branch in Github) and modified something. After committing, you want to `git push`. 
+The terminal will showed The current branch dev has no upstream branch. To push the current branch and set the remote as upstream, use the following 
+
+```sh
+git push --set-upstream origin dev
+```
+or
+
+```sh
+git push -u origin dev
 ```
