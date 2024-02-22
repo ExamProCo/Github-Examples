@@ -119,6 +119,24 @@ git commit -m "change ~~ to !!"
 
 ## Branches
 
+List of braches
+
+```sh
+git branch
+```
+
+Create a new branch
+
+```sh
+git branch branch-name
+```
+Checkout the branch
+
+```
+git checkout dev(branch-name)
+
+```
+
 ## Remotes
 
 ## Stashing
