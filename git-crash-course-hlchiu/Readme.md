@@ -138,10 +138,29 @@ git checkout dev(branch-name)
 ```
 
 ## Remotes
+We can add remote but often you will jsut add remote via upstream when you adding a branch
 
+```sh
+git remote add ....
+git branch -u origin new-feature
+```
 ## Stashing
 
+```
+git stash
+git stash list
+git stash pop
+
+git stash save readmechange
+git stash apply
+```
+
 ## Merging
+
+```sh
+git checkout dev
+git merge main
+```
 
 ## Add
 When we want to stage changes that will be included in the commit 
