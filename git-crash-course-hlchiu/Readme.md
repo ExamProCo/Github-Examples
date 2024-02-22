@@ -200,3 +200,15 @@ When we want to push a repo to our remote origin
 ```sh
 git push
 ```
+
+When you create a local branch(no new branch in Github) and modified something. After committing, you want to `git push`. 
+The terminal will showed The current branch dev has no upstream branch. To push the current branch and set the remote as upstream, use the following 
+
+```sh
+git push --set-upstream origin dev
+```
+or
+
+```sh
+git push -u origin dev
+```
