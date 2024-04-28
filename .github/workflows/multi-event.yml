@@ -13,5 +13,5 @@ jobs:
     steps:
       - name: "Echo Triggering Branch"
         run: echo "The branch that triggered: $GITHUB_REF"
-      - name: "Echo Triggering Branch"
+      - name: "Echo Job ID"
         run: echo "The Job ID: $GITHUB_JOB"
