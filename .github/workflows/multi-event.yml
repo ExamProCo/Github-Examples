@@ -12,4 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Echo Triggering Branch"
-        run: echo "The branch that triggered: $GITHUB_REF JOB_ID: $GITHUB_JOB"
+        run: echo "The branch that triggered: $GITHUB_REF"
+      - name: "Echo Triggering Branch"
+        run: echo "The Job ID: $GITHUB_JOB"
