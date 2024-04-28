@@ -1,3 +1,5 @@
+# If you don't create a self-hosted runner you will see:
+# Waiting for a runner to pick up this job...
 name: Self-hosted Runner Workflow
 
 on:
