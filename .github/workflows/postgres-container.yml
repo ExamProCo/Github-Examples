@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd ./github-actions/pg
-          npm ci
+          npm install
 
       - name: Connect to PostgreSQL
         # Runs a script that creates a PostgreSQL table, populates
