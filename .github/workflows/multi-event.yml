@@ -11,7 +11,9 @@ jobs:
   hello_world:
     runs-on: ubuntu-latest
     steps:
-      - name: "Echo Triggering Branch"
-        run: echo "The branch that triggered: $GITHUB_REF"
-      - name: "Echo Job ID"
-        run: echo "The Job ID: $GITHUB_JOB"
+      - name: "Echo Basic Information"
+        run: |
+          echo "REF: $GITHUB_REF"
+          echo "Job ID: $GITHUB_JOB"
+          echo "Action: $GITHUB_ACTION"
+          echo "Actor: $GITHUB_ACTOR"
