@@ -17,4 +17,6 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run the script
-        run: ./github-actions/myscript.sh
+        run: |
+          chmod u+x ./github-actions/myscript.sh
+          ./github-actions/myscript.sh
