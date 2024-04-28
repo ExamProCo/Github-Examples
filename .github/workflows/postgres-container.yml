@@ -36,7 +36,7 @@ jobs:
       # Performs a clean installation of all dependencies in the `package.json` file
       # For more information, see https://docs.npmjs.com/cli/ci.html
       - name: Install dependencies
-        run: 
+        run: |
           cd ./github-actions/pg
           npm ci
 
