@@ -1,5 +1,8 @@
 on:
-  push: [main,dev]
+  push:
+    branches:
+      - main
+      - dev
   pull_request:
     branches:
       - main
@@ -8,5 +11,5 @@ jobs:
   hello_world:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo Triggering Branch
+      - name: "Echo Triggering Branch"
         run: echo "The branch that triggered: $GITHUB_REF JOB_ID: $GITHUB_JOB"
