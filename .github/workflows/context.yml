@@ -4,7 +4,7 @@ on: ['push']
 
 jobs:
   my-context:
-    runs-on: ubunutu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: "My Step"
         run: echo "Hello! $MY_ACTION"
