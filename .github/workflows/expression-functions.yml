@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  issues:
+    types: [opened, labeled]
 
 jobs:
   expression-functions:
@@ -22,7 +24,7 @@ jobs:
         run: echo ${{ format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
       - name: Join issue labels
         if: github.event_name == 'issues'
-        run: echo "Issue labels: ${{ join(github.event.issue.labels.*.name, ', ') }}"
+        run: 'echo "Issue labels: ${{ join(github.event.issue.labels.*.name, ', ') }}"'
       - name: Convert job context to JSON
         run: echo "Job context in JSON: ${{ toJSON(github.job) }}"
       - name: Parse JSON string
