@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run a script
-      run: echo "Event of type: $GITHUB_EVENT_NAME"
+        run: echo "Event of type: $GITHUB_EVENT_NAME"
