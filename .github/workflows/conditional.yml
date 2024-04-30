@@ -2,7 +2,7 @@ name: example-workflow
 on: [push]
 jobs:
   hello-world:
-    if: github.repository == 'octo-org/octo-repo-prod'
+    if: github.repository == 'ExamProCo/Github-Examples'
     runs-on: ubuntu-latest
     steps:
       - name: "Hello World"
