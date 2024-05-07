@@ -107,6 +107,11 @@ gh alias
 gh api
 ```
 
+## To Login
+
+```sh
+gh auth login
+```
 
 # Stashing
 
