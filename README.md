@@ -113,6 +113,20 @@ gh api
 gh auth login
 ```
 
+NB: 
+You'll be prompted to choose an authentication method. 
+GitHub CLI supports several authentication methods, including logging in via a web browser, using a personal access token, or using an SSH key.
+Follow the prompts to complete the authentication process based on your chosen method:
+If you choose to authenticate via a web browser, a browser window will open, and you'll be asked to sign in to your GitHub account. After signing in, you'll be prompted to grant access to the GitHub CLI application.
+If you choose to authenticate using a personal access token, you'll need to enter your GitHub username and personal access token when prompted.
+Once the authentication process is complete, gh will store your authentication credentials securely, and you'll be logged in to your GitHub account.
+After logging in, you can use the GitHub CLI (gh) to interact with GitHub from the command line, such as creating repositories, managing issues and pull requests, and more.
+
+### Possible catch 
+
+unset GITHUB_TOKEN
+
+
 # Stashing
 
 ```sh
