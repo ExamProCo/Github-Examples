@@ -1,6 +1,29 @@
 # Github-Examples
 A repo containing GitHub for programmatic examples
+# Cloning
 
+<<<<<<< HEAD
+- creates a temp workspace 
+
+### HTTPS
+```sh
+- mkdir /worspace/tmp
+- cd /worspace/tmp
+- git clone : https://github.com/Github-Foundation-Learning/Github-Examples.git
+```
+
+### SSH
+```sh
+- git@github.com:Github-Foundation-Learning/Github-Examples.git 
+- SSH requires that a key be set as a token. 
+```
+
+### Git Hub CLI
+```sh
+- gh repo clone Github-Foundation-Learning/Github-Examples 
+```
+
+=======
 # Cloning
 
 - creates a temp workspace 
@@ -31,13 +54,7 @@ git commit -m "add Readme.md file"
 - git clone : https://github.com/Github-Foundation-Learning/Github-Examples.git
 ```
 
-### SSH
-```sh
-- git@github.com:Github-Foundation-Learning/Github-Examples.git 
-- SSH requires that a key be set as a token. 
-```
-https://github.com/Github-Foundation-Learning/Github-Examples.git
-- cd Github-Examples/
+
 # Commits
 
 # Branches
@@ -101,4 +118,22 @@ git commit -m "msg"
 
 ```sh
 git push
+```
+
+# When running on local machine you will need to generate a Personal Access Token (PAT).
+https://github.com/settings/token 
+
+- PAT will be used as your password when you login.
+- Will give you acess to 
+
+### SSH
+```ssh
+- git@github.com:Github-Foundation-Learning/Github-Examples.git 
+- SSH requires that a key be set as a token. 
+```
+git clone git@github.com:Github-Foundation-Learning/Github-Examples.git
+- cd Github-Examples/
+```
+
+
 
