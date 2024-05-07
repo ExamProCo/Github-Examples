@@ -62,6 +62,15 @@ git commit -m "add Readme.md file"
 
 # Stashing
 
+```sh
+git stash
+git status 
+git stash list
+git stash pop
+git stash apply
+git stast save my-name
+```
+
 # Merging
 
 # Git Reset
