@@ -126,7 +126,6 @@ After logging in, you can use the GitHub CLI (gh) to interact with GitHub from t
 
 unset GITHUB_TOKEN
 
-
 # Stashing
 
 ```sh
