@@ -85,10 +85,25 @@ git reset
 # Git Commit
 
 When we want to commit code we can write 'git commit' which will open up the commit message edit code in the editor
+A commit has a unique SAH-1 identifier 
+Author Information
+Commit Message
+Time Stamp
+Parent Commit
+Snapshot
 
 ```sh
 git commit
+git commit --amend # modifies most recent
+git commit -a -m "msg" # automatically stages all tracked modified files before a commit.
+git commit # initial commit allows empty msg
+git checkout 6111184yhr847y878948u77fd0f # checkout to a commit based on a SHA
+git commit -a -m "msg" --author # Specify author of the commit
+
+
 ```
+
+
 
 On local machine set the below:
 
