@@ -23,7 +23,6 @@ A repo containing GitHub for programmatic examples
 - gh repo clone Github-Foundation-Learning/Github-Examples 
 ```
 
-=======
 # Cloning
 
 - creates a temp workspace 
@@ -127,13 +126,68 @@ https://github.com/settings/token
 - Will give you acess to 
 
 ### SSH
-```ssh
+```sh
 - git@github.com:Github-Foundation-Learning/Github-Examples.git 
 - SSH requires that a key be set as a token. 
+
 ```
 git clone git@github.com:Github-Foundation-Learning/Github-Examples.git
 - cd Github-Examples/
 ```
 
+# Check SSH Keys
+Ensure that you have an SSH key pair set up on your system and that the public key is added to your GitHub account. You can follow the instructions here to generate and add SSH keys: 
+
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account 
+Verify SSH Configuration:
+Make sure that your SSH configuration is set up correctly. Check if your SSH config file (~/.ssh/config on Unix-like systems) has an entry for GitHub. It should look something like this:
+
+```bash
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa  # Path to your private key
+```
+
+```sh
+ssh-keygen -t rsa -b 4096 -C "tdzomba@gmail.com"
+/c/Users/TafadzwaDzomba/.ssh/id_rsa
+```
+
+To test ssh 
+```sh
+ssh -T git@github.com
+```
+
+```sh
+eval 'ssh-agent'
+```
+
+# Adding Github to VS Code
+
+https://github.com/cli/cli/blob/trunk/docs/install_linux.md 
+
+
+(type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
+&& sudo mkdir -p -m 755 /etc/apt/keyrings \
+&& wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
+&& sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt update \
+&& sudo apt install gh -y
+
+
+```ssh
+gh repo clone tafadzwadzomba/Github-Examples
+gh auth login
+```
+
+# After Installing github
+
+```ssh
+git branch <branc-name>
+git branch dev
+git checkout dev
+git fetch
 
 
