@@ -2,39 +2,38 @@
 A repo containing GitHub for programmatic examples
 # Cloning
 
-<<<<<<< HEAD
-- creates a temp workspace 
+Creates a temp workspace 
 
 ### HTTPS
 ```sh
-- mkdir /worspace/tmp
-- cd /worspace/tmp
-- git clone : https://github.com/Github-Foundation-Learning/Github-Examples.git
+mkdir /worspace/tmp
+cd /worspace/tmp
+git clone : https://github.com/Github-Foundation-Learning/Github-Examples.git
 ```
 
 ### SSH
 ```sh
-- git@github.com:Github-Foundation-Learning/Github-Examples.git 
-- SSH requires that a key be set as a token. 
+git@github.com:Github-Foundation-Learning/Github-Examples.git 
+SSH requires that a key be set as a token. 
 ```
 
 ### Git Hub CLI
 ```sh
-- gh repo clone Github-Foundation-Learning/Github-Examples 
+gh repo clone Github-Foundation-Learning/Github-Examples 
 ```
 
 # Cloning
 
-- creates a temp workspace 
-- There is a hidden folder called .git. The folder tells you that your project is .git repo.
+Creates a temp workspace 
+There is a hidden folder called .git. The folder tells you that your project is .git repo.
 
 Next step is to intialise the repo in the new folder.
 
 ```sh
-- mkdir /worspace/tmp
-- cd /worspace/tmp/new-project
-- cd /worspace/tmp/new-project 
-- git init
+mkdir /worspace/tmp
+cd /worspace/tmp/new-project
+cd /worspace/tmp/new-project 
+git init
 touch Readme.md
 code Readme.md 
 git add .
@@ -43,16 +42,14 @@ git add Github-Examples
 git reset
 git status
 git commit -m "add Readme.md file"
-
 ```
 
 ### HTTPS
 ```sh
-- mkdir /worspace/tmp
-- cd /worspace/tmp
-- git clone : https://github.com/Github-Foundation-Learning/Github-Examples.git
+mkdir /worspace/tmp
+cd /worspace/tmp
+git clone : https://github.com/Github-Foundation-Learning/Github-Examples.git
 ```
-
 
 # Commits
 
@@ -69,13 +66,16 @@ git stash list
 git stash pop
 git stash apply
 git stast save my-name
+git stash apply stash@{0}
+git stash apply stash@{1}
+git stash drop stash@{0}
 ```
 
 # Merging
 
 # Git Reset
-- Allows you to move files to move Staged changes to be unstaged. 
-- This helps to revert all staged files to be uncommited.
+Allows you to move files to move Staged changes to be unstaged. 
+This helps to revert all staged files to be uncommited.
 
 ```sh
 git add . 
@@ -84,7 +84,7 @@ git reset
 
 # Git Commit
 
-- When we want to commit code we can write 'git commit' which will open up the commit message edit code in the editor
+When we want to commit code we can write 'git commit' which will open up the commit message edit code in the editor
 
 ```sh
 git commit
@@ -97,7 +97,7 @@ git config --globa; core.editor emacs
 ```
 
 # Git Config
-- The git config file is whats stores your global configurations for git eg: email, name, editor e.t.c
+The git config file is whats stores your global configurations for git eg: email, name, editor e.t.c
 
 To view the contents of git config use the below:
 
@@ -106,8 +106,8 @@ git config --list
 ```
 
 # Intial Steps after installing Git on a machine
-- Set username
-- Set email
+Set username
+Set email
 
 ```sh
 git config --global user.name "John Doe"
@@ -122,7 +122,7 @@ git commit -m "msg"
 ```
 
 # Git Push
-- to push a a repo to out remote origin
+To push a a repo to out remote origin
 
 ```sh
 git push
@@ -131,17 +131,17 @@ git push
 # When running on local machine you will need to generate a Personal Access Token (PAT).
 https://github.com/settings/token 
 
-- PAT will be used as your password when you login.
-- Will give you acess to 
+PAT will be used as your password when you login.
+Will give you acess to 
 
 ### SSH
 ```sh
-- git@github.com:Github-Foundation-Learning/Github-Examples.git 
-- SSH requires that a key be set as a token. 
+git@github.com:Github-Foundation-Learning/Github-Examples.git 
+SSH requires that a key be set as a token. 
 
-```
+```sh
 git clone git@github.com:Github-Foundation-Learning/Github-Examples.git
-- cd Github-Examples/
+cd Github-Examples/
 ```
 
 # Check SSH Keys
@@ -153,9 +153,9 @@ Make sure that your SSH configuration is set up correctly. Check if your SSH con
 
 ```bash
 Host github.com
-    HostName github.com
-    User git
-    IdentityFile ~/.ssh/id_rsa  # Path to your private key
+HostName github.com
+User git
+IdentityFile ~/.ssh/id_rsa  # Path to your private key
 ```
 
 ```sh
@@ -198,5 +198,5 @@ git branch <branc-name>
 git branch dev
 git checkout dev
 git fetch
-
+```
 
