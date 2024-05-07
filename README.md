@@ -85,12 +85,15 @@ git reset
 # Git Commit
 
 When we want to commit code we can write 'git commit' which will open up the commit message edit code in the editor
+<<<<<<< Updated upstream
 A commit has a unique SAH-1 identifier 
 Author Information
 Commit Message
 Time Stamp
 Parent Commit
 Snapshot
+=======
+>>>>>>> Stashed changes
 
 ```sh
 git commit
