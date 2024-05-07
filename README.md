@@ -55,7 +55,58 @@ git clone : https://github.com/Github-Foundation-Learning/Github-Examples.git
 
 # Branches
 
+```sh
+git branch # list all branched
+git branch <branch-name> # create a branch
+git checkout <branch-name> # checksout of a branch
+git branch -d <branch-name> # deletes a branch
+git branch -m <old-name> <old-name> #renames a branch
+git branch -a # list remote and local branches
+git checkout -b <branch-name> # Creates and checks out a branch
+```
+
 # Remotes
+Gives remote location where a repo is stored or accessed from. 
+Common is called ORIGIN.
+Remote entries or entries are stored in .git/config
+
+```sh
+git remote -v # list all remote repos
+git remote add <name> URL
+git remote remove <name>
+git remote rename <old-name> <new-name>
+git push remote-name <branch> # pushes a branch and its commit to the specific remote
+git pull remote-name <branch> # pull updates from a remote branch
+git fetch <remote-name> # Fetch update without pulling
+```
+
+## Upstream
+Repo that is being pushed to.
+
+## DownStream
+Repo that pulls from another repo
+
+## Github Flow
+Light-weight-workflow for multiple devs working on a single repo.
+
+# Github CLI
+cmd CLI used to interract with GitHub.
+
+```sh
+gh auth
+gh browse
+gh codespace
+gh gist
+gh issue
+gh org
+gh pr
+gh project
+gh release
+gh repo
+gh alias
+gh api
+```
+
 
 # Stashing
 
@@ -85,15 +136,14 @@ git reset
 # Git Commit
 
 When we want to commit code we can write 'git commit' which will open up the commit message edit code in the editor
-<<<<<<< Updated upstream
+
 A commit has a unique SAH-1 identifier 
 Author Information
 Commit Message
 Time Stamp
 Parent Commit
 Snapshot
-=======
->>>>>>> Stashed changes
+
 
 ```sh
 git commit
