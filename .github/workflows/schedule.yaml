@@ -3,7 +3,7 @@ on:
     - cron: '*/5 * * * *'
 
 jobs:
-  hello_world1:
+  hello_world:
     runs-on: ubuntu-latest
     steps:
       - name: Echo current time
