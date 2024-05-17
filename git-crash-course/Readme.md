@@ -91,14 +91,14 @@ gh repo clone andrew-wc-brown/Github-Examples
 ## Commits
 
 
-When we want to commit code we can write git commit which will open up the commit edit message in the editor of choice.
+When we want to commit code we can write a git commit which will open up the commit edit message in the editor of choice.
 
 ```sh
 git commit
 ```
 
 Set the global editor
-```
+```sh
 git config --global core.editor emacs
 ```
 
