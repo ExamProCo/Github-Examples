@@ -1,3 +1,4 @@
+name: cron-schedule
 on:
   schedule:
     - cron: '*/2 * * * *'
