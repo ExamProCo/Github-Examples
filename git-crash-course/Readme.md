@@ -17,7 +17,7 @@ git commit -m "add readme file"
 ```
 
 
-## Cloning
+## Cloning ##
 
 We can clone three ways: HTTPS, SSH, Github CLI
 
