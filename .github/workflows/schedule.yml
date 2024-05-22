@@ -1,0 +1,11 @@
+on:
+  schedule:
+    -cron '5 * * * *'
+
+jobs:
+  test_schedule:
+    runs_on: ubuntu-latest
+    steps:
+      - name: Not on monday or wednesday
+      run: echo "run everytime"
+      run: echo " this step will always run"
