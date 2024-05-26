@@ -1,4 +1,4 @@
-# Adding my comment
+# Adding my comment 2
 name: Greetings
 
 on: [pull_request_target, issues]
