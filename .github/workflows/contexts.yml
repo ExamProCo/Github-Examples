@@ -3,13 +3,14 @@ name: Contexts
 on: ['push']
 
 jobs:
-  my_context:
+  my_contexts:
     runs-on: ubuntu-latest ## https://docs.github.com/en/actions/learn-github-actions/contexts#github-context ##
     steps:
-      - name: myAction
-        run: echo "Github Context"
+      - name: myContexts
+        run: echo "Github Contexts info below"
         env:
           MY_ACTION: ${{github.action}}
           MY_REPO: ${{ github.action_repository }}
           MY_ACTOR: ${{ github.actor }}
           MY_REPO_OWNER: ${{ github.repository_owner }}
+          MY_REPO_URL: ${{ github.repositoryUrl }}
