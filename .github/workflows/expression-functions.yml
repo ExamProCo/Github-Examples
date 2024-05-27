@@ -1,4 +1,4 @@
-name: Expression Functions Demo
+name: Expression Functions
 
 on:
   push:
