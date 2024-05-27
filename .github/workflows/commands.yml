@@ -13,5 +13,8 @@ jobs:
       - name: Exporting Var
         run: |
           echo "my_Var=Cali is my Name" >> GITHUB_ENV
-          echo "my_Var=♡ ♡ ♡ Sammy is my GirlFriend and I lover  ♡ ♡ ♡" >> GITHUB_ENV
-          echo "$(ifconfig)"
+          echo "my_Var_2=Sammy is my GF" >> GITHUB_ENV
+      - name: From Exporting
+        run: |
+          echo $my_Var
+          echo $my_Var_2
