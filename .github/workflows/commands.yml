@@ -1,0 +1,13 @@
+name: Commands
+
+on:
+    push:
+      branches:
+        - main
+
+jobs:
+  commands:
+    runs-on: windows-latest
+    steps:
+      - name: Printing
+        run: echo "The current server time is $(date)"
