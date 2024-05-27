@@ -1,13 +1,12 @@
 name: Commands
 
-on:
-    push:
-      branches:
-        - main
+on: ['push']
 
 jobs:
   commands:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Printing
-        run: echo "The current server time is $(date)"
+        run: |
+          echo "The current server time is $(date)"
+          echo "$(ifconfig)"
