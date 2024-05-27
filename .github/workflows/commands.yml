@@ -10,7 +10,7 @@ jobs:
         run: |
           echo "my_Var=Cali is my Name" >> $GITHUB_ENV
           echo "my_Var_2=Sammy is my GF" >> $GITHUB_ENV
-          echo "my_Var_3=Yahoo mi password"
+          echo "my_Var_3=Yahoo mi password" >> $GITHUB_ENV
       - name: From Exporting
         run: |
           echo $my_Var
