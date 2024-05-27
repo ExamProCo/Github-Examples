@@ -1,4 +1,4 @@
-name: Dependant Jobs Build, Test, and Deploy Workflow
+name: Dependant Jobs 1 Build, Test, and Deploy Workflow
 
 on:
   push:
