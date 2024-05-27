@@ -10,3 +10,8 @@ jobs:
         run: |
           echo "The current server time is $(date)"
           echo "$(ifconfig)"
+      - name: Exporting Var
+        run: |
+          echo "my_Var=Cali is my Name" >> GITHUB_ENV
+          echo "my_Var=♡ ♡ ♡ Sammy is my GirlFriend and I lover  ♡ ♡ ♡" >> GITHUB_ENV
+          echo "$(ifconfig)"

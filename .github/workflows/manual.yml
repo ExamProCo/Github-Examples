@@ -1,18 +1,14 @@
-name: Manual Trigger with Params
+name: Couple
 
 on:
   workflow_dispatch:
     inputs:
-      name:
-        description: 'Name of the person to greet'
+      novio:
+        description: 'Nombre del Novio'
         required: true
         type: string
-      greeting:
-        description: 'Type of greeting'
-        required: true
-        type: string
-      data:
-        description: 'Base64 encoded content of a file'
+      novia:
+        description: 'Nombre del Novio'
         required: true
         type: string
 
@@ -20,13 +16,7 @@ jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
-      - name: Decode File Content
+      - name: Mensaje de Amor
         run: |
-          echo "${{ inputs.data }}" | base64 --decode > ./decoded_file.txt
-      - name: Display Greeting
-        run: |
-          echo "${{ inputs.greeting }}, ${{ inputs.name }}!"
-      - name: Display File Content
-        run: |
-          echo "Contents of the file:"
-          cat ./decoded_file.txt
+          echo "${{ inputs.novio}} y ${{ inputs.novia }}!"
+          echo "♡ ♡ ♡${{ inputs.novia }} es mi novia y la quiero mucho ♡ ♡ ♡"
