@@ -19,4 +19,4 @@ jobs:
       - name: Mensaje de Amor
         run: |
           echo "${{ inputs.novio}} y ${{ inputs.novia }}!"
-          echo -e "\033[31m♡ ♡ ♡${{ inputs.novia }} es mi novia y la quiero mucho ♡ ♡ ♡\033[0m"
+          echo -e "\033[31m♡ ♡ ♡ \033[1m${{ inputs.novia }} ES MI NOVIA Y LA QUIERO MUCHO ♡ ♡ ♡\033[0m"
