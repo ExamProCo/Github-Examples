@@ -1,4 +1,5 @@
 name: Using ENV global, job and step
+# using ENV variables in different locations Global, Job and Step
 
 on: ['push']
 
