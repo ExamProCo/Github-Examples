@@ -7,21 +7,32 @@ on:
 
 jobs:
   deploy:
-    needs: [build, test]
+    needs: [packaging, build, test]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Deploy application
         run: echo "Deploying to production..."
-  build:
+  test:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: Test application
+        run: echo "Running tests..."
+
+  build:
+    needs: 
+    runs-on: ubuntu-latest
+    steps: packaging
+      - name: Checkout code
+        uses: actions/checkout@v3
       - name: Build application
         run: echo "Building the application..."
-  test:
+        
+  packaging:
     needs: build
     runs-on: ubuntu-latest
     steps:
