@@ -5,7 +5,7 @@ on: ['push']
 env: 
   globalEnvDay: Monday    
 jobs:
-  commands:
+  usingEnvVariables:
     runs-on: ubuntu-latest
     env: 
       jobEnvDay: "Tuesday"
