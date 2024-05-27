@@ -16,5 +16,5 @@ jobs:
           echo "my_Var_2='Sammy is my GF'" >> GITHUB_ENV
       - name: From Exporting
         run: |
-          echo $my_Var
-          echo $my_Var_2
+          echo ${{ env.my_Var}}
+          echo ${{env.my_Var_2}}
