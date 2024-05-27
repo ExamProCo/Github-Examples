@@ -1,8 +1,9 @@
-name: Conditional If Equal
+name: Conditional If Equal Or 
+# since this time is including an or for my repo it will run as opossed to conditonal.yml
 on: [push]
 jobs:
   hello-world:
-    if: github.repository == 'octo-org/octo-repo-prod'
+    if: github.repository == 'octo-org/octo-repo-prod' || github.repository == 'Cert-Organization/Github-Examples'
     runs-on: ubuntu-latest
     steps:
       - name: "Hello World"
