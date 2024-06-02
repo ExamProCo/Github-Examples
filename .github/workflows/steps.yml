@@ -1,4 +1,4 @@
-name: steps
+name: Steps and Outputs
 
 on: 
   push:
