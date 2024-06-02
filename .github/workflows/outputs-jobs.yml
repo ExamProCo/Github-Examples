@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Generate number
         id: generate-number
-        run: echo "number=$RANDOM"
+        run: echo "number=$RANDOM" >> $GITHUB_OUTPUT
 
   consumer-of-generator:
     needs: random-number-generator
