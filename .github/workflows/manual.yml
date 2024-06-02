@@ -1,0 +1,22 @@
+name: Couple♡ ♡ ♡
+
+on:
+  workflow_dispatch:
+    inputs:
+      novio:
+        description: 'Nombre del Novio'
+        required: true
+        type: string
+      novia:
+        description: 'Nombre del Novia'
+        required: true
+        type: string
+
+jobs:
+  MensajedeAmor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mensaje de Amor
+        run: |
+          echo "${{ inputs.novio}} y ${{ inputs.novia }}!"
+          echo -e "\033[31m♡ ♡ ♡ \033[1m${{ inputs.novia }} ES MI NOVIA Y LA QUIERO MUCHO ♡ ♡ ♡\033[0m"

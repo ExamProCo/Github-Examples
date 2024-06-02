@@ -1,0 +1,20 @@
+name: Using ENV global, job and step
+# using ENV variables in different locations Global, Job and Step
+
+on: ['push']
+
+env: 
+  globalEnvDay: Monday    
+jobs:
+  usingEnvVariables:
+    runs-on: ubuntu-latest
+    env: 
+      jobEnvDay: "Tuesday"
+    steps:
+      - name: Exporting Var
+        env: 
+          stepEnvDay: "Webnesday"
+        run: |
+          echo "Firt Day: $globalEnvDay"
+          echo "Second Day: $jobEnvDay"
+          echo "Firt Day: $stepEnvDay"

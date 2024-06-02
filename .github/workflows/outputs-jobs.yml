@@ -1,0 +1,24 @@
+name: Jobs and Outputs
+
+on: 
+  push:
+
+jobs:
+  random-number-generator:
+    runs-on: ubuntu-latest
+    outputs:
+      number: ${{ steps.generate-number.outputs.number }}
+    steps:
+      - name: Generate number
+        id: generate-number
+        run: echo "number=$RANDOM" >> $GITHUB_OUTPUT
+
+  consumer-of-generator:
+    needs: random-number-generator
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Use generated number
+        run: echo "The number is ${{ needs.random-number-generator.outputs.number }}"

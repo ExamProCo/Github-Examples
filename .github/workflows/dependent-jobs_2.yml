@@ -1,0 +1,42 @@
+name: Dependant Jobs 2 Build, Test, and Deploy Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  packaging:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Test application
+        run: echo "Running tests..."
+  test:
+    needs: packaging
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Test application
+        run: echo "Running tests..."
+
+  build:
+    needs: packaging
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build application
+        run: echo "Building the application..."
+
+  deploy:
+    needs: [build, test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Deploy application
+        run: echo "Deploying to production..."

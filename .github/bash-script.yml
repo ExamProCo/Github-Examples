@@ -1,4 +1,4 @@
-name: Run Bash Script
+name: Run Bash Script Original
 
 on:
   push:
