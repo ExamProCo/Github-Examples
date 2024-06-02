@@ -1,0 +1,12 @@
+name: STEPS
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - id: generate-number
+        run: echo "number=$RANDOM" >> $GITHUB_ENV
+
+      - id: use-number
+        run: echo "The number is ${{ env.number }}"
