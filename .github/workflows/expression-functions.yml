@@ -28,9 +28,9 @@
         - name: Parse JSON string
           run: echo "Parsed JSON:${{ fromJSON('{"hello":"world"}').hello }}"
         - name: Hash files
-          run: echo "Hash of files:${{ hashFiles('**/package-lock.json', '**/Gemfile.lock') }}
+          run: echo "Hash of files:${{ hashFiles('**/package-lock.json', '**/Gemfile.lock') }}"
         - name: The job has succeeded
-          if: ${{ success() }}
+          if: ${{ success() }}  
           run: echo "this job is succes"
         - name: The job has failed
           if: ${{ failure() }}
