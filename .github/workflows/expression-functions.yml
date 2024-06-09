@@ -33,3 +33,5 @@ jobs:
         if: ${{ success() }}
       - name: The job has failed
         if: ${{ failure() }}
+      - name: "goodbye"
+        run: "not a valid input"  
