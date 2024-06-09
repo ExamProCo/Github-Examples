@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-  issues:
-    types: [opened, labeled]
 
 jobs:
   expression-functions:
