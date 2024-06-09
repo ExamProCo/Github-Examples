@@ -33,4 +33,4 @@ jobs:
         if: ${{ success() }}
       - name: The job has failed
         if: ${{ failure() }}
-        run: "failed to do job"
+        run: echo "failed to do job"
