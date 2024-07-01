@@ -29,4 +29,4 @@ jobs:
       - name: Display File Content
         run: |
           echo "Contents of the file:"
-          cat ./mydata.txt
+          cat mydata.txt
