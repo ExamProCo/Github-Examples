@@ -14,6 +14,6 @@ jobs:
               env:
                 MY_ACTION: ${{github.action}}
                 MY_ACTOR: ${{github.actor}}
-                MY_PATH: ${{github.action_path}}
+                MY_PATH: cd ${{github.action_path}}
     
              
