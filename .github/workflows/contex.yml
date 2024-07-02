@@ -10,8 +10,10 @@ jobs:
               run: |
                 echo "Action! $MY_ACTION"
                 echo "ACTOR! $MY_ACTOR" 
+                echo "Action path! $MY_PATH"
               env:
                 MY_ACTION: ${{github.action}}
                 MY_ACTOR: ${{github.actor}}
+                MY_PATH: ${{github.action_path}}
     
              
