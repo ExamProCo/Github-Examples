@@ -1,0 +1,15 @@
+name: set environment varibles examples
+
+on: [push]
+
+jobs:
+  setup-and-use-env:
+    runs-on: ubuntu-latest
+    steps:
+     - name: set a dynamic environment varibles
+       run: |
+         echo "DYNAMIC_VAR= HELLO FROM GITHUB ACTIONS" >> $GITHUB_ENV
+
+     - name: use the environment
+       run: |
+         echo "The value of DYNAMIC_VAR is : $DYNAMIC_VAR"
