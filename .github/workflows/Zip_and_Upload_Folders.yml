@@ -1,0 +1,54 @@
+name: Zip_and_Upload_Folder
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version (e.g., 2022.4.0.12)'
+        required: true
+        default: ''
+      
+jobs:
+  zip_and_upload:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Extract version details
+      id: extract_version
+      run: |
+        VERSION=${{ github.event.inputs.version }}
+        GA_VERSION=$(echo $VERSION | awk -F '.' '{print $1"."$2"."$3".0"}')
+        PATCH_VERSION=$(echo $VERSION | awk -F '.' '{print $4}')
+        echo "GA_VERSION=$GA_VERSION" >> $GITHUB_ENV
+        echo "PATCH_VERSION=$PATCH_VERSION" >> $GITHUB_ENV
+
+    - name: Print extracted versions
+      run: |
+        echo "GA Version: $GA_VERSION"
+        echo "Patch Version: $PATCH_VERSION"
+
+    - name: Navigate to folder and zip it
+      run: |
+        FOLDER_PATH="path/to/repository/$GA_VERSION"
+        ZIP_FILE="folder_$GA_VERSION_$PATCH_VERSION.zip"
+        cd $FOLDER_PATH
+        zip -r $ZIP_FILE .
+
+    - name: Upload to blob storage
+      env:
+        AZURE_STORAGE_ACCOUNT: ${{ secrets.AZURE_STORAGE_ACCOUNT }}
+        AZURE_STORAGE_KEY: ${{ secrets.AZURE_STORAGE_KEY }}
+      run: |
+        AZURE_CONTAINER_NAME="your-container-name"
+        AZURE_BLOB_NAME="$ZIP_FILE"
+        AZURE_FILE_PATH="$FOLDER_PATH/$ZIP_FILE"
+
+        az storage blob upload \
+          --account-name $AZURE_STORAGE_ACCOUNT \
+          --account-key $AZURE_STORAGE_KEY \
+          --container-name $AZURE_CONTAINER_NAME \
+          --name $AZURE_BLOB_NAME \
+          --file $AZURE_FILE_PATH
