@@ -1,15 +1,10 @@
-on: [push]
+on:
+  schedule:
+    - cron: '*/5 * * * *'
 
 jobs:
-  my-job:
+  hello_world:
     runs-on: ubuntu-latest
-    name: A job to say hello
     steps:
-      - name: Hello world action step
-        id: hello
-        uses: omenking/barsoom@0.0.6
-        with:
-          name: 'Brown'
-      # Use the output from the `hello` step
-      - name: Get the Output
-        run: echo "The time was ${{ steps.hello.outputs.greeting }}"
+      - name: Echo current time
+        run: echo "The current server time is $(date)"
