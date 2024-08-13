@@ -1,32 +1,21 @@
-name: Manual Trigger with Params
+name: CI Workflow
 
 on:
-  workflow_dispatch:
-    inputs:
-      name:
-        description: 'Name of the person to greet'
-        required: true
-        type: string
-      greeting:
-        description: 'Type of greeting'
-        required: true
-        type: string
-      data:
-        description: 'Base64 encoded content of a file'
-        required: false
-        type: string
+  pull_request:
+    types: [opened, synchronize]
+  push:
+    branches:
+      - main
 
 jobs:
-  greet:
+  run-custom-action:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Decode File Content
-        run: |
-          echo "${{ inputs.data }}" | base64 --decode > ./decoded_file.txt
-      - name: Display Greeting
-        run: |
-          echo "${{ inputs.greeting }}, ${{ inputs.name }}!"
-      - name: Display File Content
-        run: |
-          echo "Contents of the file:"
-          cat ./decoded_file.txt
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run custom Next.js action
+        uses: renzonj/NEXT_CUSTOM_ACTIONS@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
