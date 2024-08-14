@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - main
-      - dev
+      - dev-b
   pull_request:
     branches:
       - main
