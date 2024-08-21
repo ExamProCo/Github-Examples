@@ -1,0 +1,17 @@
+name: Greetings #name of the template
+
+on: [pull_request_target, issues] #what event will trigger this 
+
+jobs:
+  greeting: #this job is named greeting
+    runs-on: ubuntu-latest #os
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    #https://github.com/actions/first-interaction
+    - uses: actions/first-interaction@v1 #modular component that defines how these steps work
+      with: #these are our inputs
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: "Message that will be displayed on users' first issue"
+        pr-message: "Message that will be displayed on users' first pull request"
