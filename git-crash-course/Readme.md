@@ -2,7 +2,7 @@
 
 There is a hidden folder called `.git` which tells you that our project is a git repo.
 
-If we wanted to create a git repo in a new project we' create the folder and the initalize that repo using `git init`
+If we wanted to create a git repo in a new project we'll create the folder and the initalize that repo using `git init`
 
 ```
 mkdir /workspaces/tmp/new-project
@@ -19,9 +19,9 @@ git commit -m "add readme file"
 
 ## Cloning
 
-We can clone three ways: HTTPS, SSH, Github CLI
+We can clone in three ways: HTTPS, SSH, Github CLI
 
-Since we are using GitHub Codespaecs we'll a create temporary directory in our workspace
+Since we are using GitHub Codespaecs we'll create temporary directory in our workspace
 
 ```sh
 mkdir /workspace/tmp
