@@ -1,0 +1,20 @@
+name: multi events cunts
+on:
+  push:
+    branches:
+      - main
+      - feature/your-mom
+  pull_request:
+    branches:
+      - main
+      - pulled/yer-mam
+jobs:
+  hello_yer-mam:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Echo yer mam's basic"
+        run: |
+          echo "REF: $GITHUB_REF"
+          echo "Job ID: $GITHUB_JOB"
+          echo "Action: $GITHUB_ACTION"
+          echo "Actor: $GITHUB_ACTOR"

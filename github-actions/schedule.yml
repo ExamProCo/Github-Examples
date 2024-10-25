@@ -1,0 +1,14 @@
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '*/2 * * * * '
+
+jobs:
+  hello_cunt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo current time
+        run: echo "The current time is $(date)"
+
