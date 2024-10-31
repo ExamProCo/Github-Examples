@@ -11,6 +11,7 @@ jobs:
     steps:
     # https://github.com/actions/first-interaction
     - uses: actions/first-interaction@v1
+      # passes this info to first-interaction for use
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: "Message that will be displayed on users' first issue"
