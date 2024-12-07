@@ -1,0 +1,19 @@
+name: Jobsssss
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - name: stepA
+        run: echo "Saiii"
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: stepB
+        run: echo "Hello"

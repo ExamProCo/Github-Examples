@@ -1,0 +1,19 @@
+name: Jobs without depends
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: stepA
+        run: echo "Chaitu"
+
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: stepB
+        run: echo "Hi"
