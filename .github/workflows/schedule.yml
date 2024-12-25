@@ -1,6 +1,8 @@
+name: Cron Expression
+
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/2 * * * *'
 
 jobs:
   hello_world:
