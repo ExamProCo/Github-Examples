@@ -1,0 +1,23 @@
+name: Context Example Workflow
+
+on: [push]
+
+jobs:
+    example-job:
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: Checkout repository
+            uses: actions/checkout@v2
+    
+          - name: Print GitHub context
+            run: "echo \"Repository: ${{ github.repository }}\""
+    
+          - name: Print Job context
+            run: "echo \"Job ID: ${{ github.run_id }}\""
+    
+          - name: Print Runner context
+            run: "echo \"Runner OS: ${{ runner.os }}\""
+    
+          - name: Print Secrets context
+            run: "echo \"Secret Token: ${{ secrets.GITHUB_TOKEN }}\""
