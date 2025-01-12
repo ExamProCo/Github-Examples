@@ -1,0 +1,126 @@
+name: GitHub Context Examples
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    types: [opened, synchronize, reopened]
+  issues:
+    types: [opened, edited, labeled]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+        - staging
+        - production
+
+jobs:
+  explore-github-context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
+
+      - name: Repository Information
+        run: |
+          echo "Repository: ${{ github.repository }}"
+          echo "Repository Owner: ${{ github.repository_owner }}"
+          echo "Repository Name: ${{ github.event.repository.name }}"
+          echo "Default Branch: ${{ github.event.repository.default_branch }}"
+          echo "Is Private: ${{ github.event.repository.private }}"
+
+      - name: Event Information
+        run: |
+          echo "Event Name: ${{ github.event_name }}"
+          echo "Event Type: ${{ github.event.action }}"
+          echo "Workflow: ${{ github.workflow }}"
+          echo "Run ID: ${{ github.run_id }}"
+          echo "Run Number: ${{ github.run_number }}"
+
+      - name: Actor Information
+        run: |
+          echo "Actor: ${{ github.actor }}"
+          echo "Actor ID: ${{ github.actor_id }}"
+          echo "Triggering Actor: ${{ github.triggering_actor }}"
+
+      - name: Git Information
+        run: |
+          echo "Ref: ${{ github.ref }}"
+          echo "SHA: ${{ github.sha }}"
+          echo "Ref Type: ${{ github.ref_type }}"
+          echo "Ref Name: ${{ github.ref_name }}"
+          echo "Base Ref: ${{ github.base_ref }}"
+          echo "Head Ref: ${{ github.head_ref }}"
+
+      - name: Environment Information
+        run: |
+          echo "Workspace: ${{ github.workspace }}"
+          echo "Action: ${{ github.action }}"
+          echo "Action Path: ${{ github.action_path }}"
+          echo "Server URL: ${{ github.server_url }}"
+          echo "API URL: ${{ github.api_url }}"
+          echo "Graphql URL: ${{ github.graphql_url }}"
+
+      - name: Pull Request Specific Info
+        if: github.event_name == 'pull_request'
+        run: |
+          echo "PR Number: ${{ github.event.number }}"
+          echo "PR Title: ${{ github.event.pull_request.title }}"
+          echo "PR Body: ${{ github.event.pull_request.body }}"
+          echo "PR State: ${{ github.event.pull_request.state }}"
+          echo "PR Base Branch: ${{ github.event.pull_request.base.ref }}"
+          echo "PR Head Branch: ${{ github.event.pull_request.head.ref }}"
+          echo "PR User: ${{ github.event.pull_request.user.login }}"
+
+      - name: Issue Specific Info
+        if: github.event_name == 'issues'
+        run: |
+          echo "Issue Number: ${{ github.event.issue.number }}"
+          echo "Issue Title: ${{ github.event.issue.title }}"
+          echo "Issue Body: ${{ github.event.issue.body }}"
+          echo "Issue State: ${{ github.event.issue.state }}"
+          echo "Issue Creator: ${{ github.event.issue.user.login }}"
+          echo "Issue Labels: ${{ join(github.event.issue.labels.*.name, ', ') }}"
+
+      - name: Workflow Dispatch Info
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          echo "Selected Environment: ${{ github.event.inputs.environment }}"
+
+      - name: Runner Information
+        run: |
+          echo "Runner OS: ${{ runner.os }}"
+          echo "Runner Name: ${{ runner.name }}"
+          echo "Runner Temp: ${{ runner.temp }}"
+          echo "Runner Tool Cache: ${{ runner.tool_cache }}"
+
+      - name: Job Information
+        run: |
+          echo "Job ID: ${{ github.job }}"
+          echo "Job Container ID: ${{ job.container.id }}"
+          echo "Job Services: ${{ toJSON(job.services) }}"
+
+      - name: Demonstration of Conditions
+        run: |
+          echo "This step runs on all events"
+        if: always()
+
+      - name: Push Event Specific
+        if: github.event_name == 'push'
+        run: |
+          echo "Commits in Push:"
+          echo "${{ toJSON(github.event.commits) }}"
+          echo "Pusher Name: ${{ github.event.pusher.name }}"
+          echo "Pusher Email: ${{ github.event.pusher.email }}"
+
+      - name: Security Related Context
+        run: |
+          echo "Running in GHES: ${{ github.event.repository.is_enterprise }}"
+          echo "Repository Topics: ${{ toJSON(github.event.repository.topics) }}"
+          echo "Repository Visibility: ${{ github.event.repository.visibility }}"

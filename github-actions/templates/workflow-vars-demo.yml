@@ -1,0 +1,178 @@
+name: GitHub Variables Demo
+
+# Enable permissions for OIDC
+permissions:
+  id-token: write
+  contents: read
+
+# Environmental variables at workflow level
+env:
+  WORKFLOW_VAR: "This is a workflow-level variable"
+  ENVIRONMENT: "production"
+  DEFAULT_REGION: "us-west-2"
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  demonstrate-variables:
+    runs-on: ubuntu-latest
+    # Job level environment variables
+    env:
+      JOB_VAR: "This is a job-level variable"
+      APP_NAME: "my-application"
+    
+    steps:
+      # Default GitHub Environment Variables
+      - name: Default GitHub Variables
+        run: |
+          echo "Default GitHub Variables:"
+          echo "Repository: ${{ github.repository }}"
+          echo "Workspace: ${{ github.workspace }}"
+          echo "Ref Name: ${{ github.ref_name }}"
+          echo "SHA: ${{ github.sha }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Run ID: ${{ github.run_id }}"
+          echo "Server URL: ${{ github.server_url }}"
+          echo "API URL: ${{ github.api_url }}"
+          echo "GraphQL URL: ${{ github.graphql_url }}"
+
+      # Default Runner Environment Variables
+      - name: Default Runner Variables
+        run: |
+          echo "Default Runner Variables:"
+          echo "OS: ${{ runner.os }}"
+          echo "Architecture: ${{ runner.arch }}"
+          echo "Temp Directory: ${{ runner.temp }}"
+          echo "Tool Cache: ${{ runner.tool_cache }}"
+
+      # Accessing workflow-level variables
+      - name: Workflow Level Variables
+        run: |
+          echo "Workflow Level Variables:"
+          echo "Workflow Variable: ${{ env.WORKFLOW_VAR }}"
+          echo "Environment: ${{ env.ENVIRONMENT }}"
+          echo "Region: ${{ env.DEFAULT_REGION }}"
+
+      # Accessing job-level variables
+      - name: Job Level Variables
+        run: |
+          echo "Job Level Variables:"
+          echo "Job Variable: ${{ env.JOB_VAR }}"
+          echo "App Name: ${{ env.APP_NAME }}"
+
+      # Step-level environment variables
+      - name: Step Level Variables
+        env:
+          STEP_VAR: "This is a step-level variable"
+          COMBINED_VAR: "${{ env.JOB_VAR }} and ${{ env.WORKFLOW_VAR }}"
+        run: |
+          echo "Step Level Variables:"
+          echo "Step Variable: ${{ env.STEP_VAR }}"
+          echo "Combined Variable: ${{ env.COMBINED_VAR }}"
+
+      # Using GitHub Secrets
+      - name: Using Secrets
+        env:
+          # Never print actual secrets to logs
+          HAS_SECRET: ${{ secrets.MY_SECRET != '' }}
+          API_KEY_EXISTS: ${{ secrets.API_KEY != '' }}
+        run: |
+          echo "Secrets Status:"
+          echo "Has MY_SECRET: $HAS_SECRET"
+          echo "Has API_KEY: $API_KEY_EXISTS"
+          # Example of using a secret (never echo the actual secret)
+          if [ "$HAS_SECRET" = "true" ]; then
+            echo "MY_SECRET is configured"
+          fi
+
+      # Using Configuration Variables
+      - name: Configuration Variables
+        run: |
+          echo "Configuration Variables:"
+          echo "Config Var 1: ${{ vars.CONFIG_VAR_1 }}"
+          echo "Config Var 2: ${{ vars.CONFIG_VAR_2 }}"
+          echo "Environment Specific Config: ${{ vars.ENV_SPECIFIC_CONFIG }}"
+
+      # Dynamic Variables Example
+      - name: Set Dynamic Variables
+        id: set-vars
+        run: |
+          echo "timestamp=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_OUTPUT
+          echo "random_id=$(openssl rand -hex 8)" >> $GITHUB_OUTPUT
+          echo "build_number=build-${{ github.run_number }}-$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
+
+      # Using Dynamic Variables
+      - name: Use Dynamic Variables
+        run: |
+          echo "Dynamic Variables:"
+          echo "Timestamp: ${{ steps.set-vars.outputs.timestamp }}"
+          echo "Random ID: ${{ steps.set-vars.outputs.random_id }}"
+          echo "Build Number: ${{ steps.set-vars.outputs.build_number }}"
+
+  environment-specific:
+    needs: demonstrate-variables
+    runs-on: ubuntu-latest
+    environment: production
+    env:
+      ENV_TYPE: "production"
+    
+    steps:
+      # Environment-specific secrets and variables
+      - name: Environment Specific Values
+        env:
+          HAS_ENV_SECRET: ${{ secrets.PROD_API_KEY != '' }}
+        run: |
+          echo "Environment: ${{ env.ENV_TYPE }}"
+          echo "Environment URL: ${{ vars.ENVIRONMENT_URL }}"
+          echo "Has PROD_API_KEY: $HAS_ENV_SECRET"
+          echo "Environment Config: ${{ vars.ENV_SPECIFIC_CONFIG }}"
+
+      # Using OIDC Token (Fixed version)
+      - name: Get OIDC Token
+        id: get-oidc-token
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const token = await core.getIDToken()
+            core.setSecret(token)
+            core.setOutput('token', token)
+      
+      - name: Use OIDC Token
+        run: |
+          echo "OIDC token was retrieved successfully"
+          # Never print the actual token
+          if [ "${{ steps.get-oidc-token.outputs.token != '' }}" = "true" ]; then
+            echo "Token is available for use with cloud services"
+          fi
+
+  matrix-variables:
+    needs: demonstrate-variables
+    strategy:
+      matrix:
+        environment: [dev, staging, prod]
+        region: [us-east-1, us-west-2]
+    runs-on: ubuntu-latest
+    env:
+      CURRENT_ENV: ${{ matrix.environment }}
+      CURRENT_REGION: ${{ matrix.region }}
+    
+    steps:
+      - name: Matrix Based Variables
+        run: |
+          echo "Matrix Variables:"
+          echo "Environment: ${{ env.CURRENT_ENV }}"
+          echo "Region: ${{ env.CURRENT_REGION }}"
+          echo "Combined: ${{ matrix.environment }}-${{ matrix.region }}"
+
+      # Conditional variable setting based on matrix
+      - name: Conditional Variables
+        env:
+          ENV_URL: ${{ matrix.environment == 'prod' && 'https://prod.example.com' || 'https://dev.example.com' }}
+          RESOURCE_PREFIX: ${{ matrix.environment }}-${{ matrix.region }}
+        run: |
+          echo "Conditional Variables:"
+          echo "Environment URL: $ENV_URL"
+          echo "Resource Prefix: $RESOURCE_PREFIX"

@@ -1,0 +1,144 @@
+name: Job Dependencies Demo
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to run tests'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+        - staging
+        - production
+
+jobs:
+  initial-setup:
+    runs-on: ubuntu-latest
+    outputs:
+      setup-time: ${{ steps.set-time.outputs.time }}
+      config-file: ${{ steps.set-config.outputs.config }}
+    steps:
+      - name: Set time
+        id: set-time
+        run: echo "time=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_OUTPUT
+      
+      - name: Set config
+        id: set-config
+        run: |
+          echo "config={\"version\":\"1.0\",\"env\":\"${{ github.event.inputs.environment }}\"}" >> $GITHUB_OUTPUT
+
+  lint:
+    needs: initial-setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo setup time
+        run: echo "Setup was done at ${{ needs.initial-setup.outputs.setup-time }}"
+      
+      - name: Run lint
+        run: |
+          echo "Running lint checks..."
+          sleep 5
+          echo "Lint completed"
+
+  unit-tests:
+    needs: initial-setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run unit tests
+        run: |
+          echo "Running unit tests..."
+          sleep 10
+          echo "Unit tests completed"
+
+  integration-tests:
+    needs: [lint, unit-tests]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run integration tests
+        run: |
+          echo "Running integration tests..."
+          sleep 15
+          echo "Integration tests completed"
+
+  parallel-tests:
+    needs: initial-setup
+    strategy:
+      matrix:
+        test-group: [group1, group2, group3]
+        node-version: [14, 16, 18]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run parallel tests
+        run: |
+          echo "Running ${{ matrix.test-group }} with Node ${{ matrix.node-version }}"
+          sleep 5
+          echo "Parallel tests completed for ${{ matrix.test-group }}"
+
+  security-scan:
+    needs: initial-setup
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Security scan
+        run: |
+          echo "Running security scan..."
+          sleep 8
+          echo "Security scan completed"
+
+  build:
+    needs: [integration-tests, parallel-tests, security-scan]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        run: |
+          echo "Configuration: ${{ needs.initial-setup.outputs.config }}"
+          echo "Building application..."
+          sleep 10
+          echo "Build completed"
+
+  deploy-staging:
+    needs: build
+    if: |
+      success() && 
+      (github.event.inputs.environment == 'staging' || github.ref == 'refs/heads/main')
+    runs-on: ubuntu-latest
+    environment:
+      name: staging
+      url: https://staging.example.com
+    steps:
+      - name: Deploy to staging
+        run: |
+          echo "Deploying to staging..."
+          sleep 5
+          echo "Staging deployment completed"
+
+  deploy-production:
+    needs: [deploy-staging]
+    if: |
+      success() && 
+      github.event.inputs.environment == 'production'
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://production.example.com
+    steps:
+      - name: Deploy to production
+        run: |
+          echo "Deploying to production..."
+          sleep 5
+          echo "Production deployment completed"
+
+  cleanup:
+    needs: [deploy-staging, deploy-production]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cleanup
+        run: |
+          echo "Cleaning up resources..."
+          echo "Setup time was ${{ needs.initial-setup.outputs.setup-time }}"
+          sleep 3
+          echo "Cleanup completed"
