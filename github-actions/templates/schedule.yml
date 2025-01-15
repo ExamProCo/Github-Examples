@@ -1,4 +1,5 @@
 on:
+# Will only run on default branch
   schedule:
     - cron: '*/5 * * * *'
 
