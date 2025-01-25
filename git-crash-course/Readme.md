@@ -123,7 +123,7 @@ git branch branch-name
 Checkout the branch
 
 ```
-git checkout dev
+git checkout branchn_ame
 ```
 
 
