@@ -9,6 +9,7 @@ jobs:
         id: hello
         uses: goranrad/barsoom@0.0.2
         with:
+            
           name: 'Brown'
       # Use the output from the `hello` step
       - name: Get the output time
