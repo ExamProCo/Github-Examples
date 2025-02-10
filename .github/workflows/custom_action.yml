@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: goranrad/barsoom-action@v0.0.1
+        uses: goranrad/barsoom@0.0.1
         with:
           name: 'Brown'
       # Use the output from the `hello` step
