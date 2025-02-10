@@ -22,4 +22,4 @@ jobs:
       
       - name: "step 2"
         run: |
-          echo $My_VAL
+          echo $My_VAL    # This will print "hello"
