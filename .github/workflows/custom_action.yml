@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: goranrad/barsoom@0.0.3
+        uses: goranrad/barsoom@0.0.5
         with:
           name: 'Brown'
       # sssdddhe output sds from the `hello` step
