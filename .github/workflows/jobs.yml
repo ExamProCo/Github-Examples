@@ -1,0 +1,25 @@
+name: "Dependen jobs Example"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job2:
+    runs-on: self-hosted
+    needs: job1
+    steps:
+      - name: "step 2"
+        run: |
+          echo $MY_VAL    # This will print "hello"
+
+  job1:
+    runs-on: self-hosted
+    steps:
+      - name: "step 1"
+        run: |
+          echo "MY_VAL=hello" >> $GITHUB_ENV
+        env:
+          MY_VAL: hello
+  
