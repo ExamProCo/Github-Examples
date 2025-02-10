@@ -8,11 +8,11 @@ on:
 jobs:
   job2:
     runs-on: self-hosted
-    #needs: job1
+    needs: job1
     steps:
       - name: "step 2"
         run: |
-          echo $MY_VAL    # This will print "hello"
+          echo "Say hello $MY_VAL"
 
   job1:
     runs-on: self-hosted
