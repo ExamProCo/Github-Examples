@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   my-context:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: "My Step"
         run: echo "Hello! {{ github.action }}"
