@@ -1,26 +1,26 @@
 name: "Workflow Commands"
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 jobs:
-  my-job:
-    runs-on: self-hosted
-    steps:
-      - name: "group logging"
-        run: |
-          echo "::group::This is a group"
-          echo "Hello"
-          echo "World"
-          echo "::endgroup::"
+    my-job:
+        runs-on: self-hosted
+        steps:
+            - name: "group logging"
+              run: |
+                echo "::group::This is a group"
+                echo "Hello"
+                echo "World"
+                echo "::endgroup::"
     
-      - name: "step 1"
-        run: |
-          echo "MY_VAL=hello" >> $GITHUB_ENV
+            - name: "step 1"
+              run: |
+                echo "MY_VAL=hello" >> $GITHUB_ENV
       
-      - name: "step 2"
-        run: |
-          echo $My_VAL
+            - name: "step 2"
+                run: |
+                    echo $My_VAL
 
