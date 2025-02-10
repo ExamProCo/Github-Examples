@@ -7,10 +7,9 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: goranrad/barsoom@0.0.2
+        uses: goranrad/barsoom@0.0.3
         with:
-            
           name: 'Brown'
-      # Use the output from the `hello` step
+      # dddhe output sds from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
