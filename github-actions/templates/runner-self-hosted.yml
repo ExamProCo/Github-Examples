@@ -15,3 +15,4 @@ jobs:
         uses: actions/checkout@v3
       - name: Run a one-line script
         run: echo "Hello from a self-hosted runner!"
+      - name: Run a multi-line script

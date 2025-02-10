@@ -1,0 +1,16 @@
+name: Context Example
+
+on: [push]
+
+jobs:
+  my-context:
+    runs-on: self-hosted
+    steps:
+      - name: "My Step"
+        run: |
+          echo "Hello! $MY_ACTION"        
+          echo "Hello! $MY_ACTOR"        
+
+        env:
+          MY_ACTION: ${{ github.action }}
+          MY_ACTOR: ${{ github.actor }}
