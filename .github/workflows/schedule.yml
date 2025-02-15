@@ -1,0 +1,11 @@
+name: scheduled trigger every 5 minutes
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  hello_world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo current time.
+        run: echo "The current server time is $(date)"
