@@ -1,0 +1,119 @@
+[2025-03-10 13:21:20Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2025-03-10 13:21:20Z INFO HostContext] Well known directory 'Bin': '/workspaces/Github-Examples/actions-runner/bin'
+[2025-03-10 13:21:20Z INFO HostContext] Well known directory 'Root': '/workspaces/Github-Examples/actions-runner'
+[2025-03-10 13:21:20Z INFO HostContext] Well known config file 'Credentials': '/workspaces/Github-Examples/actions-runner/.credentials'
+[2025-03-10 13:21:20Z INFO HostContext] Well known directory 'Bin': '/workspaces/Github-Examples/actions-runner/bin'
+[2025-03-10 13:21:20Z INFO HostContext] Well known directory 'Root': '/workspaces/Github-Examples/actions-runner'
+[2025-03-10 13:21:20Z INFO HostContext] Well known config file 'Runner': '/workspaces/Github-Examples/actions-runner/.runner'
+[2025-03-10 13:21:20Z INFO Listener] Runner is built for Linux (X64) - linux-x64.
+[2025-03-10 13:21:20Z INFO Listener] RuntimeInformation: Ubuntu 20.04.6 LTS.
+[2025-03-10 13:21:20Z INFO Listener] Version: 2.322.0
+[2025-03-10 13:21:20Z INFO Listener] Commit: 0edc478ca75d0a753dcbcec7405f3f26db67b1ac
+[2025-03-10 13:21:20Z INFO Listener] Culture: 
+[2025-03-10 13:21:20Z INFO Listener] UI Culture: 
+[2025-03-10 13:21:20Z INFO HostContext] Well known directory 'Bin': '/workspaces/Github-Examples/actions-runner/bin'
+[2025-03-10 13:21:20Z INFO HostContext] Well known directory 'Root': '/workspaces/Github-Examples/actions-runner'
+[2025-03-10 13:21:20Z INFO Listener] Validating directory permissions for: '/workspaces/Github-Examples/actions-runner'
+[2025-03-10 13:21:20Z INFO CommandLineParser] Parse
+[2025-03-10 13:21:20Z INFO CommandLineParser] Parsing 1 args
+[2025-03-10 13:21:20Z INFO CommandLineParser] parsing argument
+[2025-03-10 13:21:20Z INFO CommandLineParser] HasArgs: False
+[2025-03-10 13:21:20Z INFO CommandLineParser] Adding Command: run
+[2025-03-10 13:21:20Z INFO Listener] Arguments parsed
+[2025-03-10 13:21:20Z INFO Runner] ExecuteCommand
+[2025-03-10 13:21:20Z INFO ConfigurationStore] currentAssemblyLocation: /workspaces/Github-Examples/actions-runner/bin/Runner.Listener.dll
+[2025-03-10 13:21:20Z INFO HostContext] Well known directory 'Bin': '/workspaces/Github-Examples/actions-runner/bin'
+[2025-03-10 13:21:20Z INFO ConfigurationStore] binPath: /workspaces/Github-Examples/actions-runner/bin
+[2025-03-10 13:21:20Z INFO HostContext] Well known directory 'Bin': '/workspaces/Github-Examples/actions-runner/bin'
+[2025-03-10 13:21:20Z INFO HostContext] Well known directory 'Root': '/workspaces/Github-Examples/actions-runner'
+[2025-03-10 13:21:20Z INFO ConfigurationStore] RootFolder: /workspaces/Github-Examples/actions-runner
+[2025-03-10 13:21:20Z INFO HostContext] Well known directory 'Bin': '/workspaces/Github-Examples/actions-runner/bin'
+[2025-03-10 13:21:20Z INFO HostContext] Well known directory 'Root': '/workspaces/Github-Examples/actions-runner'
+[2025-03-10 13:21:20Z INFO HostContext] Well known config file 'Runner': '/workspaces/Github-Examples/actions-runner/.runner'
+[2025-03-10 13:21:20Z INFO ConfigurationStore] ConfigFilePath: /workspaces/Github-Examples/actions-runner/.runner
+[2025-03-10 13:21:20Z INFO HostContext] Well known directory 'Bin': '/workspaces/Github-Examples/actions-runner/bin'
+[2025-03-10 13:21:20Z INFO HostContext] Well known directory 'Root': '/workspaces/Github-Examples/actions-runner'
+[2025-03-10 13:21:20Z INFO HostContext] Well known config file 'Credentials': '/workspaces/Github-Examples/actions-runner/.credentials'
+[2025-03-10 13:21:20Z INFO ConfigurationStore] CredFilePath: /workspaces/Github-Examples/actions-runner/.credentials
+[2025-03-10 13:21:20Z INFO HostContext] Well known directory 'Bin': '/workspaces/Github-Examples/actions-runner/bin'
+[2025-03-10 13:21:20Z INFO HostContext] Well known directory 'Root': '/workspaces/Github-Examples/actions-runner'
+[2025-03-10 13:21:20Z INFO HostContext] Well known config file 'MigratedCredentials': '/workspaces/Github-Examples/actions-runner/.credentials_migrated'
+[2025-03-10 13:21:20Z INFO ConfigurationStore] MigratedCredFilePath: /workspaces/Github-Examples/actions-runner/.credentials_migrated
+[2025-03-10 13:21:20Z INFO HostContext] Well known directory 'Bin': '/workspaces/Github-Examples/actions-runner/bin'
+[2025-03-10 13:21:20Z INFO HostContext] Well known directory 'Root': '/workspaces/Github-Examples/actions-runner'
+[2025-03-10 13:21:20Z INFO HostContext] Well known config file 'Service': '/workspaces/Github-Examples/actions-runner/.service'
+[2025-03-10 13:21:20Z INFO ConfigurationStore] ServiceConfigFilePath: /workspaces/Github-Examples/actions-runner/.service
+[2025-03-10 13:21:20Z INFO CommandSettings] Flag 'help': 'False'
+[2025-03-10 13:21:20Z INFO CommandSettings] Flag 'version': 'False'
+[2025-03-10 13:21:20Z INFO CommandSettings] Flag 'commit': 'False'
+[2025-03-10 13:21:20Z INFO CommandSettings] Flag 'check': 'False'
+[2025-03-10 13:21:20Z INFO CommandSettings] Command 'configure': 'False'
+[2025-03-10 13:21:20Z INFO CommandSettings] Command 'remove': 'False'
+[2025-03-10 13:21:20Z INFO CommandSettings] Command 'warmup': 'False'
+[2025-03-10 13:21:20Z INFO ConfigurationManager] LoadSettings
+[2025-03-10 13:21:20Z INFO ConfigurationStore] IsConfigured()
+[2025-03-10 13:21:20Z INFO ConfigurationStore] IsConfigured: True
+[2025-03-10 13:21:20Z INFO ConfigurationManager] Is configured: True
+[2025-03-10 13:21:20Z INFO ConfigurationStore] Read setting file: 303 chars
+[2025-03-10 13:21:20Z INFO ConfigurationManager] Settings Loaded
+[2025-03-10 13:21:20Z INFO ConfigurationStore] IsServiceConfigured()
+[2025-03-10 13:21:20Z INFO ConfigurationStore] IsServiceConfigured: False
+[2025-03-10 13:21:20Z INFO CommandSettings] Command 'run': 'True'
+[2025-03-10 13:21:20Z INFO ConfigurationStore] IsConfigured()
+[2025-03-10 13:21:20Z INFO ConfigurationStore] IsConfigured: True
+[2025-03-10 13:21:20Z INFO ConfigurationManager] Is configured: True
+[2025-03-10 13:21:20Z INFO Runner] Could not parse the argument value '' for StartupType. Defaulting to Manual
+[2025-03-10 13:21:20Z INFO Runner] Set runner startup type - Manual
+[2025-03-10 13:21:20Z INFO CommandSettings] Flag 'once': 'False'
+[2025-03-10 13:21:20Z INFO CommandSettings] Flag 'once': 'False'
+[2025-03-10 13:21:20Z INFO Runner] RunAsync
+[2025-03-10 13:21:20Z INFO ConfigurationManager] LoadSettings
+[2025-03-10 13:21:20Z INFO ConfigurationStore] IsConfigured()
+[2025-03-10 13:21:20Z INFO ConfigurationStore] IsConfigured: True
+[2025-03-10 13:21:20Z INFO ConfigurationManager] Is configured: True
+[2025-03-10 13:21:20Z INFO ConfigurationManager] Settings Loaded
+[2025-03-10 13:21:20Z INFO MessageListener] {
+  "AgentId": 21,
+  "AgentName": "enterprise",
+  "PoolId": 1,
+  "PoolName": "Default",
+  "ServerUrl": "https://pipelinesghubeus6.actions.githubusercontent.com/VpNZBfzdoDkFeECWtWcj3f0X7m8gwgXXTFqf7IzaFlHtsCOIwr/",
+  "GitHubUrl": "https://github.com/AnEpicDoor/Github-Examples",
+  "WorkFolder": "_work"
+}
+[2025-03-10 13:21:20Z INFO MessageListener] Loading Credentials
+[2025-03-10 13:21:20Z INFO ConfigurationStore] HasCredentials()
+[2025-03-10 13:21:20Z INFO ConfigurationStore] stored True
+[2025-03-10 13:21:20Z INFO CredentialManager] GetCredentialProvider
+[2025-03-10 13:21:20Z INFO CredentialManager] Creating type OAuth
+[2025-03-10 13:21:20Z INFO CredentialManager] Creating credential type: OAuth
+[2025-03-10 13:21:20Z INFO HostContext] Well known directory 'Bin': '/workspaces/Github-Examples/actions-runner/bin'
+[2025-03-10 13:21:20Z INFO HostContext] Well known directory 'Root': '/workspaces/Github-Examples/actions-runner'
+[2025-03-10 13:21:20Z INFO HostContext] Well known config file 'RSACredentials': '/workspaces/Github-Examples/actions-runner/.credentials_rsaparams'
+[2025-03-10 13:21:20Z INFO RSAFileKeyManager] Loading RSA key parameters from file /workspaces/Github-Examples/actions-runner/.credentials_rsaparams
+[2025-03-10 13:21:20Z INFO MessageListener] Attempt to create session.
+[2025-03-10 13:21:20Z INFO MessageListener] Connecting to the Runner Server...
+[2025-03-10 13:21:20Z INFO RunnerServer] EstablishVssConnection
+[2025-03-10 13:21:20Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2025-03-10 13:21:20Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2025-03-10 13:21:20Z INFO RunnerServer] EstablishVssConnection
+[2025-03-10 13:21:20Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2025-03-10 13:21:20Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2025-03-10 13:21:20Z INFO RunnerServer] EstablishVssConnection
+[2025-03-10 13:21:20Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2025-03-10 13:21:20Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2025-03-10 13:21:21Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2025-03-10 13:21:21Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2025-03-10 13:21:21Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2025-03-10 13:21:21Z INFO MessageListener] VssConnection created
+[2025-03-10 13:21:21Z INFO Terminal] WRITE LINE: 
+[2025-03-10 13:21:21Z INFO Terminal] WRITE LINE: 
+[2025-03-10 13:21:21Z INFO RSAFileKeyManager] Loading RSA key parameters from file /workspaces/Github-Examples/actions-runner/.credentials_rsaparams
+[2025-03-10 13:21:21Z INFO RSAFileKeyManager] Loading RSA key parameters from file /workspaces/Github-Examples/actions-runner/.credentials_rsaparams
+[2025-03-10 13:21:21Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2025-03-10 13:21:21Z INFO MessageListener] Session created.
+[2025-03-10 13:21:21Z INFO Terminal] WRITE LINE: Current runner version: '2.322.0'
+[2025-03-10 13:21:21Z INFO Terminal] WRITE LINE: 2025-03-10 13:21:21Z: Listening for Jobs
+[2025-03-10 13:21:21Z INFO JobDispatcher] Set runner/worker IPC timeout to 30 seconds.
+[2025-03-10 13:21:22Z INFO RSAFileKeyManager] Loading RSA key parameters from file /workspaces/Github-Examples/actions-runner/.credentials_rsaparams
+[2025-03-10 13:21:22Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
