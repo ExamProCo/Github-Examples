@@ -1,0 +1,12 @@
+name: Print Time Every Minute
+
+on:
+  schedule:
+    - cron: '* * * * *'
+
+jobs:
+  print-time:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print current time
+        run: date
