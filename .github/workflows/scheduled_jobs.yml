@@ -1,0 +1,16 @@
+name: Practise workflow to learn about cron jobs
+
+on:
+  schedule:
+    - cron: "*0 0 1 1 *"
+
+jobs:
+  check_workflow:
+     runs-on: ubuntu-latest
+     steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+
+      - name: Printing the date after every 5 minutes
+        run: echo " The date at which this workflow is running is ${date}"
+    

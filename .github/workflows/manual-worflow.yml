@@ -1,0 +1,28 @@
+name: This is to learn the manual dispatch of workflows
+
+on:
+  workflow_dispatch:
+   inputs:
+     script_name:
+        required: true
+        description: 'Please choose the name of the .py you want to execute'
+        default: "hello.py"
+        type: choice
+        options: 
+                - "hello.py"
+                - "hello_1.py"
+                - "hello_2.py"
+                - "hello_3.py"
+
+
+jobs:
+  manual_dispatch:
+   runs-on: ubuntu-latest
+   steps :
+     - name: Code Checkout
+       uses: actions/checkout@v4
+
+     - name: Run Python script
+       run : python ${{github.event.inputs.script_name}}
+   
+   

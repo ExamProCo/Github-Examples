@@ -1,0 +1,23 @@
+name: This workflow is basically used to learn different types of functions
+
+on: 
+  push
+
+env:
+  STR: "Ammar"
+  SUBSTRING: "mmmmmmmmm"
+
+jobs:
+  function-checkers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if string contains sub-strings
+        env:
+          l1: ${{ env.STR }}
+          l2: ${{ env.SUBSTRING }}
+        if: contains(env.l1, env.l2)
+        run: echo "Substring present"
+
+      - name: Substring Not Present
+        if: ${{ !contains(env.l1, env.l2) }}
+        run: echo "Not Present"

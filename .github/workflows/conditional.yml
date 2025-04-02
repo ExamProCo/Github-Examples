@@ -1,0 +1,28 @@
+name: This is to learn about conditional workflows
+
+on: pull_request
+
+
+jobs:
+  first_job:
+     runs-on: ubuntu-latest
+     steps:
+          - name: Code Checkout
+            uses: actions/checkout@v4
+
+          - name: Print a constant message
+            run: echo "Hello this message will be printed irrespective of the message"
+
+  second_job:
+       if: github.repository == 'ammararsiwala/Github-Examples'
+       runs-on: ubuntu-latest
+       steps:
+         - name: Code Checkout
+           uses: actions/checkout@v4
+
+         - name: Print a variable message
+           run: echo "Hello this message will be printed only if the repo name is correct"
+       
+
+     
+       

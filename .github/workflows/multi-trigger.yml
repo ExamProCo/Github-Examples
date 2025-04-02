@@ -1,0 +1,15 @@
+name: This is a workflow which has multiple triggers
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job_name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+
+      - name: Checking a few commands
+        run: |
+          echo "The job id is $GITHUB_JOB"

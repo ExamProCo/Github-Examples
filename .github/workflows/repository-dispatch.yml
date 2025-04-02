@@ -1,0 +1,17 @@
+name: This is to learn how to use repository-dispatch
+
+on:
+  repository_dispatch:
+    types: [webhook]
+
+jobs:
+  running-repodispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+
+      - name: Printing the event name
+        run: echo "The GitHub event is ${{ github.event_name }}"
+
+  
