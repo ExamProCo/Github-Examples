@@ -1,0 +1,31 @@
+name : ci-cd for qcs test front-end
+
+on:
+  pull_request:
+    branches:
+      #- MechanicalTest-version-1.0
+      - main
+  workflow_dispatch: 
+  
+env:
+  DEPLOY_SCRIPT_PATH: ./bashfiles/deploy_server.sh
+  UPGRADE_SCRIPT_PATH: ./bashfiles/upgrade_version.sh
+  DOCKERFILE_PATH: ./Dockerfile
+  SAVE_IMAGE_SCRIPT_PATH: ./bashfiles/save_image.sh
+  TERRAFORM_MAIN_PATH: terraform/main  
+  BRANCH_NAME: MechanicalTest-version-1.0
+  USER_GIT_EMAIL : mouhcene.abbassen@ge.com
+  USER_GIT_SSO : 260002392
+  REPO_NAME: Base_Affaire_QCS
+  WORKING_DIRECTORY: Client
+
+jobs:
+  checkout-permissions-pushnewversion:
+      runs-on: self-hosted-linux
+#      container: 
+#        image: docker.io/node:20-alpine
+      steps:
+        - name :  checkout the code
+          uses :  actions/checkout@v3
+        - name : render files 
+          run : ls
