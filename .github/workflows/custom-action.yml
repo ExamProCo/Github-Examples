@@ -1,15 +1,14 @@
 on: [push]
 
 jobs:
-  my-job:
+  my_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: A job for hello
     steps:
-      - name: Hello world action step
+      - name: Hello World action steps try
         id: hello
-        uses: omenking/barsoom@0.0.6
+        uses: Roizz-soul/barsoom@0.04
         with:
           name: 'Brown'
-      # Use the output from the `hello` step
-      - name: Get the Output
+      - name: Get the output
         run: echo "The time was ${{ steps.hello.outputs.greeting }}"
