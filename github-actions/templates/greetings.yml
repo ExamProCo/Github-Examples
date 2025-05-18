@@ -1,15 +1,14 @@
 name: Greetings
 
-on: [pull_request_target, issues]
+on: [pull_request, pull_request_target, issues] # EVENT IT TRIGGERS ON
 
 jobs:
   greeting:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest ## image
     permissions:
       issues: write
       pull-requests: write
     steps:
-    # https://github.com/actions/first-interaction
     - uses: actions/first-interaction@v1
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,22 @@
+name: MultiEvent
+on:
+    push:
+      branches:
+        - test
+        - main
+    pull_request:
+      branches:
+        - main
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      #- uses: actions/checkout@v2
+      - name: Echo basis info
+        run: |
+          echo "REF: $GITHUB_REF"
+          echo "JOB_ID: $GITHUB_JOB"
+          echo "GITHUB_ACTION: $GITHUB_ACTION"
+          echo "GITHUB_ACTOR: $GITHUB_ACTOR"

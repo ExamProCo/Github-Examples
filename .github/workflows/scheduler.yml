@@ -1,0 +1,10 @@
+name: Scheduler
+on :
+  schedule:
+    - cron: '*/1 * * * *'
+jobs:
+  hello_time:
+    runs-on: ubuntu-latest
+    steps:
+      - name: hello time
+        run: echo "The time is here $(date)"
