@@ -1,0 +1,11 @@
+name: Schedule
+on:
+ schedule:
+   - cron: '*/5 * * * *'
+
+jobs:
+  Hello_World:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: print date
+        run: echo "todays date is $(date)"
