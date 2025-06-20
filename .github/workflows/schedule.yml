@@ -1,0 +1,10 @@
+on:
+  schedule:
+    - cron: "*/1 * * * *"
+
+jobs:
+  hello_world:
+    runs-on: windows-latest
+    steps:
+      - name: Echo current time
+        run: echo "the current server time is $(Get-Date)"

@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+      - main
+      # - dev
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  hello_world:
+    runs-on: windows-latest
+    steps:
+      - name: "Echo Basic Information"
+        run: |
+
+          echo "REF: $env:GITHUB_REF"
+          echo "Job ID: $env:GITHUB_JOB"
+          echo "Action: $env:GITHUB_ACTION"
+          echo "Actor: $env:GITHUB_ACTOR"
