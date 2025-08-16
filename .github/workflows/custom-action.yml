@@ -1,4 +1,6 @@
-on: [push]
+name: Custom-Action
+
+on: [push, workflow_dispatch]
 
 jobs:
   my-job:
@@ -12,4 +14,6 @@ jobs:
           name: 'Brown'
       # Use the output from the `hello` step
       - name: Get the Output
+
         run: echo "The time was ${{ steps.hello.outputs.greeting }}"
+
