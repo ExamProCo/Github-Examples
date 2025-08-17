@@ -1,3 +1,4 @@
+name: Addingname
 on: [push]
 
 jobs:
@@ -12,4 +13,5 @@ jobs:
           name: 'Brown'
       # Use the output from the `hello` step
       - name: Get the Output
+
         run: echo "The time was ${{ steps.hello.outputs.greeting }}"

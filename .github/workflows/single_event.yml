@@ -1,0 +1,13 @@
+name: Single Event Example
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run build step
+        run: echo "Triggered only on push to main branch"

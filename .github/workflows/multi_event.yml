@@ -1,0 +1,10 @@
+name: Multi Event Example
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run build step
+        run: echo "Triggered only on push or pull request"
