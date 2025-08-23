@@ -5,6 +5,7 @@ on:
   pull_request:
     branches:
       - main
+      - docker-ecr-push
       
 jobs:
   my-job:
@@ -20,4 +21,5 @@ jobs:
       - name: Get the Output
 
         run: echo "The time was ${{ steps.hello.outputs.greeting }}"
+
 
