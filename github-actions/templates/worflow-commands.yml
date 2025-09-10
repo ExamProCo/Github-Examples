@@ -1,0 +1,20 @@
+name: "workflow for group message"
+on: [push]
+jobs:
+  group-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Group message"
+        run: |
+          echo "::group::This is a group message example."
+          echo "This is a line inside the group."
+          echo "Job context in JSON: ${{ toJSON(github.job) }}"
+          echo "Job ref in JSON: ${{ toJSON(github.ref) }}"
+          echo "Job sha in JSON: ${{ toJSON(github.sha) }}"
+          echo "Another line inside the group."
+          echo "You can collapse and expand this section in the logs."
+          echo "::endgroup::"
+      - name: "Set environment variable"
+        run: echo "NAME=GTS" >> $GITHUB_ENV
+      - name: "Display environment variable"
+        run: echo "The value of NAME is $NAME"

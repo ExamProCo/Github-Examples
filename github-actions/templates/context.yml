@@ -1,0 +1,45 @@
+name: Context Examples
+on: [push]
+jobs:
+    my-context:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Display job context"
+              run: |
+                echo "Job context in JSON: ${{ toJSON(github.job) }}"
+                echo "Job ref in JSON: ${{ toJSON(github.ref) }}"
+                echo "Job sha in JSON: ${{ toJSON(github.sha) }}"
+            - name: "Display runner context"
+              run: |
+                echo "Runner OS: ${{ runner.os }}"
+                echo "Runner Temp Directory: ${{ runner.temp }}"
+                echo "Runner Tool Cache Directory: ${{ runner.tool_cache }}"
+            - name: "Display event context"
+              run: |
+                echo "Event name: ${{ github.event_name }}"
+                echo "Event action (if applicable): ${{ github.event.action || 'N/A' }}"
+                echo "Event repository name: ${{ github.event.repository.name }}"
+                echo "Event sender login: ${{ github.event.sender.login }}"
+            - name: "Display workflow context"
+              run: |
+                echo "Workflow name: ${{ github.workflow }}"
+                echo "Workflow run ID: ${{ github.run_id }}"
+                echo "Workflow run number: ${{ github.run_number }}"
+                echo "Workflow actor: ${{ github.actor }}"
+            - name: "Display repository context"
+              run: |
+                echo "Repository name: ${{ github.repository }}"
+                echo "Repository owner: ${{ github.repository_owner }}"
+                echo "Default branch: ${{ github.ref_name || 'N/A' }}"
+            - name: "Display commit context"
+              run: |
+                echo "Commit SHA: ${{ github.sha }}"
+                echo "Commit message: ${{ github.event.head_commit.message || 'N/A' }}"
+                echo "Commit author name: ${{ github.event.head_commit.author.name || 'N/A' }}"
+            - name: "Set and display environment variable"
+              run: |
+                echo "Setting environment variable MY_VAR to 'HelloWorld'"
+                echo "MY_VAR=HelloWorld" >> $GITHUB_ENV
+            - name: "Display the environment variable"
+              run: |
+                echo "The value of MY_VAR is $MY_VAR"
