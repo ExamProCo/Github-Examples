@@ -1,0 +1,11 @@
+on:
+  schedule: 
+  - cron: '*/2 * * * *'
+
+
+jobs:
+  test-schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: current time print
+        run: echo "today date is $(date)"

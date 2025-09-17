@@ -1,0 +1,26 @@
+name: multi event test
+
+on: 
+  issues:
+  pull_request:
+
+jobs:
+  my_job_1 :
+    runs-on: ubuntu-latest
+    steps: 
+      - name: run a command
+        run: |
+          echo "REF: ${{  github.ref }}"
+          echo "Job ID: ${{ github.job }}"
+          echo "Action: ${{ github.action }}"
+          echo "Actor: ${{ github.actor }}"
+  
+  my_job_2 :
+    runs-on: ubuntu-latest
+    steps:
+      - name: say my name
+        run: echo "my name is $(whoami)  yes"
+
+
+           
+
