@@ -26,7 +26,3 @@ jobs:
       - name: Display Greeting
         run: |
           echo "${{ inputs.greeting }}, ${{ inputs.name }}!"
-      - name: Display Hidden File Content
-        run: |
-          echo "Contents of the file:"
-          cat ./mydata.txt
