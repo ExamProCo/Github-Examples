@@ -20,13 +20,13 @@ jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
-      - name: Decode File Content
+      - name: Decode User Content
         run: |
-          echo "${{ inputs.data }}" | base64 --decode > ./mydata
+          echo "${{ inputs.data }}" | base64 --decode
       - name: Display Greeting
         run: |
           echo "${{ inputs.greeting }}, ${{ inputs.name }}!"
-      - name: Display File Content
+      - name: Display Hidden File Content
         run: |
           echo "Contents of the file:"
-          cat ./mydata
+          cat ./mydata.txt
