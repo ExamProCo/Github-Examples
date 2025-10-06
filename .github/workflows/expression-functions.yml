@@ -1,0 +1,24 @@
+name: Expression Functions Demo
+
+on:
+  push:
+    branches:
+      - main
+  issues:
+    types: [opened, labeled]
+
+jobs:
+  expression-functions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if string contains substring
+        if: contains('Hello world', 'llo')
+        run: echo "The string contains the substring."
+      - name: Check if string starts with
+        if: startsWith('Hello world', 'He')
+        run: echo "The string starts with 'He'."
+      - name: Check if string ends with
+        if: endsWith('Hello world', 'ld')
+        run: echo "The string ends with 'ld'."
+      - name: Format and echo string
+        run: echo ${{ format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
