@@ -1,0 +1,27 @@
+{
+  "name": "postgresql-workflow-example",
+  "version": "1.0.0",
+  "description": "A project to demonstrate building and pushing a PostgreSQL Docker image using GitHub Actions.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/postgresql-workflow-example.git"
+  },
+  "keywords": [
+    "postgresql",
+    "docker",
+    "github-actions"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

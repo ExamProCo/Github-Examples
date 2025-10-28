@@ -1,0 +1,20 @@
+name: "Dependent Jobs Example"
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: StepA"
+        run: |
+          echo "World"
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: StepB
+        run: 
+            echo "Hello"
