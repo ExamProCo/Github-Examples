@@ -10,6 +10,6 @@ jobs:
         uses: omenking/barsoom@0.0.6
         with:
           name: 'Brown'
-      # Use the output from the `hello` step
+      # Use the output from the `hello`
       - name: Get the Output
         run: echo "The time was ${{ steps.hello.outputs.greeting }}"
