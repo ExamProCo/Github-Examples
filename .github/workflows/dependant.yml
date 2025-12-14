@@ -14,4 +14,4 @@ jobs:
         name: Job B
         steps:
             - name: Step 2
-              run: "HelLo "
+              run: echo "HelLo "
