@@ -1,0 +1,21 @@
+name: Trigger multi event
+
+on:
+    push:
+        branches:
+          - main
+          - dev
+    pull_request:
+        branches: 
+          - main
+          
+jobs:
+    Hi_from_developer:
+        runs-on: ubuntu-latest
+        steps:
+          - name: "Echo information"          
+            run: | 
+                echo "REF: $GITHUB_REF"
+                echo "Job id: $GITHUB_JOB"
+                echo "Action: $GITHUB_ACTION"
+                echo "Actor: $GITHUB_ACTOR"
