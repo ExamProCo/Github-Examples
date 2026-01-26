@@ -1,6 +1,7 @@
+name: Print the time every five minutes
 on:
   schedule:
-    - cron: '*/2 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   hello_world:
