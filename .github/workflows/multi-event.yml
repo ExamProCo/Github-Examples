@@ -4,6 +4,7 @@ on:
     branches:
       - main
       - dev
+      - development
   pull_request:
     branches:
       - main
@@ -12,7 +13,7 @@ jobs:
   hello_world:
     runs-on: ubuntu-latest
     steps:
-      - name: "Echo Basic Informations...!"
+      - name: "Echo Basic Informations....!"
         run: |
           echo "REF: $GITHUB_REF"
           echo "Job ID: $GITHUB_JOB"
