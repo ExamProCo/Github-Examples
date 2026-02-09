@@ -1,3 +1,4 @@
+name: github-first-exercise-1
 on:
   push:
     branches:
