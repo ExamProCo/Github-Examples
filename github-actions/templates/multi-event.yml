@@ -17,3 +17,4 @@ jobs:
           echo "Job ID: $GITHUB_JOB"
           echo "Action: $GITHUB_ACTION"
           echo "Actor: $GITHUB_ACTOR"
+          echo "PR Number: ${{ github.event.pull_request.number }}"
