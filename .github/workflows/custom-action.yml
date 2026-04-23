@@ -1,5 +1,8 @@
 on: [push]
 
+permissions:
+  contents: read
+
 jobs:
   my-job:
     runs-on: ubuntu-latest
