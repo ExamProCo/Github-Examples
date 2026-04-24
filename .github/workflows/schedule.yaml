@@ -1,0 +1,12 @@
+name: Scheduled Job
+
+on:
+  schedule:
+    - cron: '*/1 * * * *'  # every 1 minute
+
+jobs:
+  hello_world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo current time
+        run: echo "The current server time is $(date)"
