@@ -1,10 +1,11 @@
-name: "Multiple event checker"
+name: "Multiple Event Checker"
 
 on:
   push:
     branches:
       - main
       - tryout
+
   pull_request:
     branches:
       - main
@@ -13,9 +14,8 @@ jobs:
   hello_world:
     runs-on: ubuntu-latest
     steps:
-      - name: "Echo Basic Information"
-        run: |
-          echo "REF: $GITHUB_REF"
-          echo "Job ID: $GITHUB_JOB"
-          echo "Action: $GITHUB_ACTION"
+      - name: "Printing"
+        run:
+          echo "HelloWorld!"
           echo "Actor: $GITHUB_ACTOR"
+
