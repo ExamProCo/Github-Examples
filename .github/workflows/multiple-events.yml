@@ -17,5 +17,5 @@ jobs:
       - name: "Printing"
         run:
           echo "HelloWorld!"
-          echo "Actor: $GITHUB_ACTOR"
+          echo "Actor $GITHUB_ACTOR"
 
