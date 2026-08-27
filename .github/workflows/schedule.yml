@@ -1,0 +1,12 @@
+name: Schedule Github Action
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'  
+
+jobs:
+  hello_world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo current time
+        run: echo "The Current Server Time = $(date)"
